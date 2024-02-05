@@ -2,6 +2,9 @@
 import random
 
 def get_numbers_ticket(min, max, quantity):
+    if isinstance(min, int)==False or isinstance(max, int)==False or isinstance(quantity, int)==False:
+        print(f"{min}, {max}, {quantity} - повинні бути числами!")
+        return None
     #  створюємр список
     numbersLot = list()
     # цикл 
@@ -17,9 +20,12 @@ def get_numbers_ticket(min, max, quantity):
         # кількість елементів відповидае
         if len(numbersLot) >= quantity:
             break
-    return (numbersLot)
+    return numbersLot
 
 
 # Перший раз
 lottery_numbers = get_numbers_ticket(1, 49, 6)
+print("Ваші лотерейні числа у діапазоні від 1 до 49:", lottery_numbers)
+# Другий раз - некоректні дані
+lottery_numbers = get_numbers_ticket("f", 49, 6)
 print("Ваші лотерейні числа у діапазоні від 1 до 49:", lottery_numbers)
