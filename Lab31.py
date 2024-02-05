@@ -1,3 +1,4 @@
+# Перше завдання Модуль 3
 from datetime import datetime
 
 def get_days_from_today(datestr):
