@@ -9,7 +9,7 @@ def normalize_phone(phone_number):
     replacement = ""
     phone = re.sub(pattern, replacement, phone)
     # чи номер починається з '38'
-    if phone.find("38")==-1:
+    if len(phone)<=10 and phone.find("38")==-1:
         phone = "38"+phone
     # чи номер починається з '+'
     if phone.find("+")==-1:
@@ -26,6 +26,8 @@ raw_numbers = [
     "(050)8889900",
     "38050-111-22-22",
     "38050 111 22 11   ",
+    "972545379039",
+    "+972545379039"
 ]
 
 sanitized_numbers = [normalize_phone(num) for num in raw_numbers]
